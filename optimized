@@ -1,0 +1,12 @@
+def subarray_sum(arr,target):
+    prefix_sum=0
+    seen=set()
+    for num in arr:
+        prefix_sum+=num
+        if prefix_sum==target:
+            return True
+        if(prefix_sum-target) in seen:
+            return True
+        seen.add(prefix_sum)
+    return False
+print(subarray_sum([1,2,3,4],6))

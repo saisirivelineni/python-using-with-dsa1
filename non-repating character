@@ -1,0 +1,19 @@
+def char_frequency(s):
+    freq={}
+    for ch in s:
+        freq[ch]=freq.get(ch,0)+1
+    for ch in freq:
+        if freq[ch]==1:
+            return ch
+
+print(char_frequency("aabbeccd"))
+
+#Using counter
+from collections import counter
+def first_unique(s):
+    freq=counter(s)
+    for ch in s:
+        if freq[ch]==1:
+            return ch
+        return None
+print(first_unique("aabbcdde"))
